@@ -1,0 +1,7 @@
+<manifest projecttype="SUITEAPP">
+  <publisherid>com.example</publisherid>
+  <projectid>mysuitetest</projectid>
+  <projectname>helloworld</projectname>
+  <projectversion>0.0.1</projectversion>
+  <frameworkversion>1.0</frameworkversion>
+</manifest>
