@@ -15,7 +15,7 @@ define([ 'N/query', 'N/search', 'N/file' ],
             // Create the CSV file
             var csvFile = file.create({
                 name: 'items-data-eureka.csv',
-                contents: 'internalid,name,description,image,imgname\n',
+                contents: 'internalid,name,description,thumbnail,image\n',
                 folder: 700,
                 fileType: 'CSV'
             });
@@ -79,7 +79,6 @@ define([ 'N/query', 'N/search', 'N/file' ],
                 details: 'csvFileId[' + csvFileId + ']'
             });
             context.response.write('Success');
-            return;
         }
 
         return {
