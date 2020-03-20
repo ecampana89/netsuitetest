@@ -14,8 +14,8 @@ define([ 'N/query', 'N/search', 'N/file' ],
         function saveCSVFile(searchResult) {
             // Create the CSV file
             var csvFile = file.create({
-                name: 'items-data-eureka.csv',
-                contents: 'internalid,name,description,thumbnail,image,isinactive, isonline\n',
+                name: 'images-data-eureka.csv',
+                contents: 'internalid,name,description,filetype,folder,owner,url\n',
                 folder: 700,
                 fileType: 'CSV'
             });
@@ -27,14 +27,17 @@ define([ 'N/query', 'N/search', 'N/file' ],
 
             for (var i = 0; i < searchResult.length; i++) {
                 csvFile.appendLine({
-                    value:
-                        searchResult[i].getValue({name: 'internalid'}) + ',' +
-                        '"' + ((searchResult[i].getValue({name: 'name'})).replace("\"", "")).replace("\"", "") + '"' + ',' +
-                        '"' + ((searchResult[i].getValue({name: 'description'})).replace("\"", "")).replace("\"", "") + '"' + ',' +
-                        searchResult[i].getValue({name: 'thumbnailurl'})  + ',' +
-                        searchResult[i].getValue({name: 'imageurl'})  + ',' +
-                        searchResult[i].getValue({name: 'isinactive'})  + ',' +
-                        searchResult[i].getValue({name: 'isonline'})
+                    value: searchResult[i].getValue({name: 'internalid'}) + ',' +
+                        searchResult[i].getValue({name: 'name'}) + ',' +
+                        searchResult[i].getValue({name: 'description'}) + ',' +
+                        searchResult[i].getValue({name: 'filetype'}) + ',' +
+                        searchResult[i].getValue({name: 'folder'}) + ',' +
+                        searchResult[i].getValue({name: 'owner'}) + ',' +
+                        searchResult[i].getValue({name: 'url'})
+                });
+                log.debug({
+                    title: 'saveCSVFile',
+                    details: 'Append Line - images.id[' + searchResult[i].id + ']'
                 });
             }
 
@@ -51,24 +54,36 @@ define([ 'N/query', 'N/search', 'N/file' ],
          * @Since 2015.2
          */
         function onRequest(context) {
-            // Search on Items
+            // Search on images
             var filters = [
                 search.createFilter({
-                    name: 'imageurl',
-                    operator: search.Operator.ISNOTEMPTY
+                    name: 'isavailable',
+                    operator: search.Operator.IS,
+                    values: [ 'true' ]
+                })
+                ,
+                search.createFilter({
+                    name: 'filetype',
+                    operator: search.Operator.IS,
+                    values: [ 'JPGIMAGE' ]
+                }),
+                search.createFilter({
+                    name: 'availablewithoutlogin',
+                    operator: search.Operator.IS,
+                    values: [ 'true' ]
                 })
             ];
 
             var searchResult = search.create({
-                type: search.Type.ITEM,
-                title: 'Items',
-                id: 'customsearch_items_eureka',
-                columns: [ 'internalid', 'name', 'description', 'thumbnailurl', 'imageurl', 'isonline', 'isinactive' ],
+                type: 'file',
+                title: 'images',
+                id: 'customsearch_files_eureka',
+                columns: [ 'internalid', 'name', 'description', 'filetype', 'folder', 'owner', 'url' ],
                 filters: filters
             }).run();
             searchResult = searchResult.getRange(0, 1000);
             log.debug({
-                title: 'Success',
+                title: 'Success save images',
                 details: searchResult
             });
             var csvFileId = saveCSVFile(searchResult);
@@ -76,8 +91,8 @@ define([ 'N/query', 'N/search', 'N/file' ],
                 title: 'onRequest',
                 details: 'csvFileId[' + csvFileId + ']'
             });
-            context.response.write('<h1>Success save items</h1>' +
-                'items-data-eureka.csv');
+            context.response.write('<h1>Success save images</h1>' +
+                'images-data-eureka.csv');
         }
 
         return {
