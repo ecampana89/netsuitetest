@@ -12,11 +12,12 @@ define([ 'N/query', 'N/search', 'N/file' ],
     function (query, search, file) {
 
         function saveCSVFile(searchResult) {
+            var now = new Date().toISOString();
             // Create the CSV file
             var csvFile = file.create({
-                name: 'items-data-eureka.csv',
+                name: 'items-data-eureka' + now + '.csv',
                 contents: 'internalid,name,description,thumbnail,image,isinactive, isonline\n',
-                folder: 700,
+                folder: 701,
                 fileType: 'CSV'
             });
 
