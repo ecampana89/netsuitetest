@@ -11,19 +11,17 @@ define([ 'N/query', 'N/search', 'N/file' ],
      */
     function (query, search, file) {
 
+        var now = new Date().toISOString();
+        var name = 'employee-role-eureka.-' + now + '.csv';
+
         function saveCSVFile(searchResult) {
-            var now = new Date().toISOString();
             // Create the CSV file
             var csvFile = file.create({
-                name: 'images-data-eureka' + now + '.csv',
-                contents: 'internalid,' +
-                    'name,' +
-                    'description,' +
-                    'filetype,' +
-                    'folder,' +
-                    'owner,' +
-                    'url,' +
-                    'isavailable\n',
+                name: name,
+                contents: 'firstname,' +
+                    'lastname,' +
+                    'role.internalid,' +
+                    'role.name\n',
                 folder: 701,
                 fileType: 'CSV'
             });
@@ -35,15 +33,10 @@ define([ 'N/query', 'N/search', 'N/file' ],
 
             for (var i = 0; i < searchResult.length; i++) {
                 csvFile.appendLine({
-                    value: searchResult[i].getValue({name: 'internalid'}) + ',' +
-                        searchResult[i].getValue({name: 'name'}) + ',' +
-                        searchResult[i].getValue({name: 'description'}) + ',' +
-                        searchResult[i].getValue({name: 'filetype'}) + ',' +
-                        searchResult[i].getValue({name: 'folder'}) + ',' +
-                        searchResult[i].getValue({name: 'owner'}) + ',' +
-                        searchResult[i].getValue({name: 'url'}) + ',' +
-                        searchResult[i].getValue({name: 'isavailable'}
-                        )
+                    value: searchResult[i].getValue({name: 'firstname'}) + ',' +
+                        searchResult[i].getValue({name: 'lastname'}) + ',' +
+                        searchResult[i].getValue({name: 'internalid', join: 'role'}) + ',' +
+                        searchResult[i].getValue({ name: 'name', join: 'role' })
                 });
                 log.debug({
                     title: 'saveCSVFile',
@@ -64,43 +57,56 @@ define([ 'N/query', 'N/search', 'N/file' ],
          * @Since 2015.2
          */
         function onRequest(context) {
-            // Search on images
+
+            //search on employees based on specific roles by joining to role table
             var filters = [
                 search.createFilter({
-                    name: 'filetype',
+                    name: 'isinactive',
                     operator: search.Operator.IS,
-                    values: [ 'JPGIMAGE' ]
+                    values: [ 'F' ]
                 }),
                 search.createFilter({
-                    name: 'availablewithoutlogin',
-                    operator: search.Operator.IS,
-                    values: [ 'true' ]
+                    name: 'internalid',
+                    join: 'role',
+                    operator: search.Operator.ISNOTEMPTY
+                    // , values: JSON.parse(JSON.stringify(roleList))
                 })
             ];
 
+            //get the values of the roles in the role table via SuiteScript 2.0
             var searchResult = search.create({
-                type: 'file',
-                title: 'images',
-                id: 'customsearch_files_eureka',
-                columns: [ 'internalid', 'name', 'description', 'filetype', 'folder', 'owner', 'url', 'isavailable' ],
-                filters: filters
+                'type': 'employee',
+                'filters': filters,
+                'columns': [
+                    search.createColumn({'name': 'firstname'}),
+                    search.createColumn({'name': 'lastname'}),
+                    search.createColumn({'name': 'internalid', join: 'role'}),
+                    search.createColumn({'name': 'name', join: 'role'})
+                    // if we wanted to run a summary search, here is the syntax
+                    //,search.createColumn({'name':'created','summary':search.Summary.MAX})
+                ]
             }).run();
             searchResult = searchResult.getRange(0, 1000);
             log.debug({
-                title: 'Success save images',
+                title: 'searchResult',
                 details: searchResult
             });
+
             var csvFileId = saveCSVFile(searchResult);
             log.debug({
                 title: 'onRequest',
                 details: 'csvFileId[' + csvFileId + ']'
             });
             context.response.write('<h1>Success save images</h1>' +
-                'images-data-eureka.csv');
+                'name:' + name);
         }
 
         return {
             onRequest: onRequest
         };
 
-    });
+    }
+);
+
+
+

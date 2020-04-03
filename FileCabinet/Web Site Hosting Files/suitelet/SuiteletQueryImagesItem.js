@@ -11,19 +11,19 @@ define([ 'N/query', 'N/search', 'N/file' ],
      */
     function (query, search, file) {
 
+        var now = new Date().toISOString();
+        var name = 'images-data-eureka.-' + now + '.csv';
+
         function saveCSVFile(searchResult) {
-            var now = new Date().toISOString();
             // Create the CSV file
             var csvFile = file.create({
-                name: 'images-data-eureka' + now + '.csv',
+                name: name,
                 contents: 'internalid,' +
                     'name,' +
-                    'description,' +
-                    'filetype,' +
                     'folder,' +
-                    'owner,' +
                     'url,' +
-                    'isavailable\n',
+                    // 'item.internalid,' +
+                    'item.imageurl\n',
                 folder: 701,
                 fileType: 'CSV'
             });
@@ -37,13 +37,10 @@ define([ 'N/query', 'N/search', 'N/file' ],
                 csvFile.appendLine({
                     value: searchResult[i].getValue({name: 'internalid'}) + ',' +
                         searchResult[i].getValue({name: 'name'}) + ',' +
-                        searchResult[i].getValue({name: 'description'}) + ',' +
-                        searchResult[i].getValue({name: 'filetype'}) + ',' +
                         searchResult[i].getValue({name: 'folder'}) + ',' +
-                        searchResult[i].getValue({name: 'owner'}) + ',' +
                         searchResult[i].getValue({name: 'url'}) + ',' +
-                        searchResult[i].getValue({name: 'isavailable'}
-                        )
+                        // searchResult[i].getValue({name: 'internalid', join: 'item'}) + ',' +
+                        searchResult[i].getValue({name: 'imageurl', join: 'item'})
                 });
                 log.debug({
                     title: 'saveCSVFile',
@@ -64,6 +61,7 @@ define([ 'N/query', 'N/search', 'N/file' ],
          * @Since 2015.2
          */
         function onRequest(context) {
+
             // Search on images
             var filters = [
                 search.createFilter({
@@ -76,31 +74,49 @@ define([ 'N/query', 'N/search', 'N/file' ],
                     operator: search.Operator.IS,
                     values: [ 'true' ]
                 })
+                // , search.createFilter({
+                //     name: 'internalid',
+                //     join: 'item',
+                //     operator: search.Operator.ISNOTEMPTY
+                //     // , values: JSON.parse(JSON.stringify(roleList))
+                // })
             ];
 
+            var itemColumn = search.createColumn({
+                name: 'imageurl',
+                join: 'item'
+            });
             var searchResult = search.create({
-                type: 'file',
-                title: 'images',
-                id: 'customsearch_files_eureka',
-                columns: [ 'internalid', 'name', 'description', 'filetype', 'folder', 'owner', 'url', 'isavailable' ],
-                filters: filters
-            }).run();
-            searchResult = searchResult.getRange(0, 1000);
+                'type': 'file',
+                'title': 'images',
+                'id': 'customsearch_files_items_eureka',
+                'columns': [
+                    search.createColumn({'name': 'internalid'}),
+                    search.createColumn({'name': 'name'}),
+                    search.createColumn({'name': 'folder'}),
+                    search.createColumn({'name': 'url'}),
+                    itemColumn
+                ],
+                'filters': filters
+            });
+            searchResult = searchResult.run().getRange(0, 1000);
             log.debug({
                 title: 'Success save images',
                 details: searchResult
             });
+
             var csvFileId = saveCSVFile(searchResult);
             log.debug({
                 title: 'onRequest',
                 details: 'csvFileId[' + csvFileId + ']'
             });
             context.response.write('<h1>Success save images</h1>' +
-                'images-data-eureka.csv');
+                'name:' + name);
         }
 
         return {
             onRequest: onRequest
         };
 
-    });
+    }
+);

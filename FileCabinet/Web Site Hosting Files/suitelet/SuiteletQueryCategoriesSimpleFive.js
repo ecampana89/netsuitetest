@@ -5,14 +5,20 @@
  */
 define(['N/query', 'N/search', 'N/file'],
     /**
-     * @param{query} queryfolderName
+     * @param{query} query
      * @param{search} search
      * @param{file} file
      */
     function (query, search, file) {
 
         function saveCSVFile(searchResult) {
-             var now = new Date().toISOString();
+            var csvFolderId = getFolderId('EurekaLabs');
+
+            var now = new Date().toISOString();
+
+             // Create Folder: http://www.netsuiterp.com/2019/01/dynamically-create-folder-with-sub.html
+             // http://burnignorance.com/netsuite-tips-and-hacks/create-a-folder-and-file-using-suitescript/
+
             // Create the CSV file
             var csvFile = file.create({
                 name: 'categories-data-eureka-' + now + '.csv',
@@ -20,7 +26,7 @@ define(['N/query', 'N/search', 'N/file'],
                     'Category (No Hierarchy),' +
                     'Category,' +
                     'Is Inactive\n',
-                folder: 39,
+                folder: csvFolderId, //Folder ID (FileCabinet)
                 fileType: 'CSV'
             });
 
@@ -43,7 +49,29 @@ define(['N/query', 'N/search', 'N/file'],
                 title: 'saveCSVFile',
                 details: 'CSV file saved success'
             });
+            var csvFileId = csvFile.save();
             return csvFile;
+        }
+
+        function getFolderId(folderName) {
+            var searchFolderResult = search.create({
+                type: search.Type.FOLDER,
+                title: 'Search Folder',
+                filters: [
+                    search.createFilter({
+                        name: 'name',
+                        operator: search.Operator.IS,
+                        values: folderName
+                    })
+                ],
+                columns: [search.createColumn({
+                    name: 'internalid'
+                })]
+            }).run();
+
+            searchFolderResult = searchFolderResult.getRange(0, 1000);
+
+            return searchFolderResult[0].getValue('internalid');
         }
 
         /**

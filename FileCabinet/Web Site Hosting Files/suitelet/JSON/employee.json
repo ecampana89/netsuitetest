@@ -1,0 +1,1167 @@
+[
+  {
+    "recordType": "employee",
+    "id": "1524",
+    "values": {
+      "firstname": "Aiden",
+      "lastname": "Somerhalder",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "-5",
+    "values": {
+      "firstname": "Alex",
+      "lastname": "Wolfe",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "-5",
+    "values": {
+      "firstname": "Alex",
+      "lastname": "Wolfe",
+      "role.internalid": [
+        {
+          "value": "1047",
+          "text": "1047"
+        }
+      ],
+      "role.name": "Ecommerce Manager"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "-5",
+    "values": {
+      "firstname": "Alex",
+      "lastname": "Wolfe",
+      "role.internalid": [
+        {
+          "value": "1021",
+          "text": "1021"
+        }
+      ],
+      "role.name": "03: VP Sales"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "-5",
+    "values": {
+      "firstname": "Alex",
+      "lastname": "Wolfe",
+      "role.internalid": [
+        {
+          "value": "1009",
+          "text": "1009"
+        }
+      ],
+      "role.name": "Marketing Director"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "-5",
+    "values": {
+      "firstname": "Alex",
+      "lastname": "Wolfe",
+      "role.internalid": [
+        {
+          "value": "1029",
+          "text": "1029"
+        }
+      ],
+      "role.name": "Support Rep"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "-5",
+    "values": {
+      "firstname": "Alex",
+      "lastname": "Wolfe",
+      "role.internalid": [
+        {
+          "value": "1069",
+          "text": "1069"
+        }
+      ],
+      "role.name": "Project Manager"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "-5",
+    "values": {
+      "firstname": "Alex",
+      "lastname": "Wolfe",
+      "role.internalid": [
+        {
+          "value": "1030",
+          "text": "1030"
+        }
+      ],
+      "role.name": "Support Director"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "25",
+    "values": {
+      "firstname": "Amy",
+      "lastname": "Nguyen",
+      "role.internalid": [
+        {
+          "value": "1048",
+          "text": "1048"
+        }
+      ],
+      "role.name": "12: A/P Clerk"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "21",
+    "values": {
+      "firstname": "Andy",
+      "lastname": "Andrews",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "900",
+    "values": {
+      "firstname": "Anne",
+      "lastname": "Sullivan",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "27",
+    "values": {
+      "firstname": "Brad",
+      "lastname": "Sparling",
+      "role.internalid": [
+        {
+          "value": "1068",
+          "text": "1068"
+        }
+      ],
+      "role.name": "02: Engineering"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "912",
+    "values": {
+      "firstname": "Brandy",
+      "lastname": "Dickens",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1545",
+    "values": {
+      "firstname": "Brandy",
+      "lastname": "Samms",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1516",
+    "values": {
+      "firstname": "Brenda",
+      "lastname": "Jones",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1513",
+    "values": {
+      "firstname": "Brenda",
+      "lastname": "Wilson",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "31",
+    "values": {
+      "firstname": "Brian",
+      "lastname": "Harris",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1647",
+    "values": {
+      "firstname": "C",
+      "lastname": "P",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "24",
+    "values": {
+      "firstname": "Carmen",
+      "lastname": "Matthews",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1310",
+    "values": {
+      "firstname": "Chris",
+      "lastname": "Donahue",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "23",
+    "values": {
+      "firstname": "Clark",
+      "lastname": "Koozer",
+      "role.internalid": [
+        {
+          "value": "1062",
+          "text": "1062"
+        }
+      ],
+      "role.name": "06: Machine Shop"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "224",
+    "values": {
+      "firstname": "Dale",
+      "lastname": "Williams",
+      "role.internalid": [
+        {
+          "value": "1012",
+          "text": "1012"
+        }
+      ],
+      "role.name": "09: Shipping"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1541",
+    "values": {
+      "firstname": "Dan",
+      "lastname": "Lu",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1564",
+    "values": {
+      "firstname": "Dave",
+      "lastname": "Herrington",
+      "role.internalid": [
+        {
+          "value": "1031",
+          "text": "1031"
+        }
+      ],
+      "role.name": "05: Manufacturing"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "913",
+    "values": {
+      "firstname": "David",
+      "lastname": "Belavich",
+      "role.internalid": [
+        {
+          "value": "1061",
+          "text": "1061"
+        }
+      ],
+      "role.name": "08: Inspection"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1523",
+    "values": {
+      "firstname": "David",
+      "lastname": "Garcia",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1095",
+    "values": {
+      "firstname": "David",
+      "lastname": "Nelson",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1540",
+    "values": {
+      "firstname": "Debbie",
+      "lastname": "Green",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1314",
+    "values": {
+      "firstname": "Eric",
+      "lastname": "Givens",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1648",
+    "values": {
+      "firstname": "Esteban",
+      "lastname": "Campana",
+      "role.internalid": [
+        {
+          "value": "55",
+          "text": "55"
+        }
+      ],
+      "role.name": "Developer"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1648",
+    "values": {
+      "firstname": "Esteban",
+      "lastname": "Campana",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "217",
+    "values": {
+      "firstname": "Evan",
+      "lastname": "Ziccarelli",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1626",
+    "values": {
+      "firstname": "Fats",
+      "lastname": "Aralar",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1312",
+    "values": {
+      "firstname": "Gary",
+      "lastname": "Grant",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "903",
+    "values": {
+      "firstname": "George",
+      "lastname": "Phelps",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "30",
+    "values": {
+      "firstname": "Inger",
+      "lastname": "Wyman",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1643",
+    "values": {
+      "firstname": "Ivan",
+      "lastname": "Eugenio",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1469",
+    "values": {
+      "firstname": "Ivan",
+      "lastname": "Smith",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1640",
+    "values": {
+      "firstname": "Jan",
+      "lastname": "Bucoy",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "216",
+    "values": {
+      "firstname": "Jennifer",
+      "lastname": "Beattie",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "26",
+    "values": {
+      "firstname": "Jessica",
+      "lastname": "Sikes",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1032",
+    "values": {
+      "firstname": "Jill",
+      "lastname": "Muscat",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "20",
+    "values": {
+      "firstname": "Joanna",
+      "lastname": "Hammack",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1022",
+    "values": {
+      "firstname": "Joanne",
+      "lastname": "Miller",
+      "role.internalid": [
+        {
+          "value": "1070",
+          "text": "1070"
+        }
+      ],
+      "role.name": "10: Cost Acctg"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1521",
+    "values": {
+      "firstname": "John",
+      "lastname": "Mayo",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "215",
+    "values": {
+      "firstname": "Julie",
+      "lastname": "Winters",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1326",
+    "values": {
+      "firstname": "Kate",
+      "lastname": "Ferris",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "22",
+    "values": {
+      "firstname": "Kelly",
+      "lastname": "Kallingal",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "17",
+    "values": {
+      "firstname": "Krista",
+      "lastname": "Barton",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1649",
+    "values": {
+      "firstname": "Lucas",
+      "lastname": "Tripodi",
+      "role.internalid": [
+        {
+          "value": "55",
+          "text": "55"
+        }
+      ],
+      "role.name": "Developer"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1649",
+    "values": {
+      "firstname": "Lucas",
+      "lastname": "Tripodi",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "19",
+    "values": {
+      "firstname": "Mark",
+      "lastname": "Grogan",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1302",
+    "values": {
+      "firstname": "Mark",
+      "lastname": "Jones",
+      "role.internalid": [
+        {
+          "value": "1056",
+          "text": "1056"
+        }
+      ],
+      "role.name": "Employee Center"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1550",
+    "values": {
+      "firstname": "Mark",
+      "lastname": "Smith",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1311",
+    "values": {
+      "firstname": "Mary",
+      "lastname": "Higgins",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1008",
+    "values": {
+      "firstname": "Mary",
+      "lastname": "Redding",
+      "role.internalid": [
+        {
+          "value": "1005",
+          "text": "1005"
+        }
+      ],
+      "role.name": "03: Inside Sales"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1292",
+    "values": {
+      "firstname": "Matt",
+      "lastname": "Nolan",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1098",
+    "values": {
+      "firstname": "Mike",
+      "lastname": "Hammond",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "911",
+    "values": {
+      "firstname": "Miles",
+      "lastname": "Grey",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "214",
+    "values": {
+      "firstname": "Mini",
+      "lastname": "Granger",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1320",
+    "values": {
+      "firstname": "Miriam",
+      "lastname": "Hobbs",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "29",
+    "values": {
+      "firstname": "Neil",
+      "lastname": "Thomson",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1315",
+    "values": {
+      "firstname": "Nina",
+      "lastname": "Pandovski",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1653",
+    "values": {
+      "firstname": "Octavio",
+      "lastname": "Percivaldi",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "181",
+    "values": {
+      "firstname": "Owen",
+      "lastname": "Walsh",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1651",
+    "values": {
+      "firstname": "Pablo",
+      "lastname": "Niccolai",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1601",
+    "values": {
+      "firstname": "Paul",
+      "lastname": "Blancaflor",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1589",
+    "values": {
+      "firstname": "Paz",
+      "lastname": "Yancha",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1646",
+    "values": {
+      "firstname": "Peter",
+      "lastname": "Angeles",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "916",
+    "values": {
+      "firstname": "Peter",
+      "lastname": "Georgakoulias",
+      "role.internalid": [
+        {
+          "value": "1057",
+          "text": "1057"
+        }
+      ],
+      "role.name": "11: A/R Clerk"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1421",
+    "values": {
+      "firstname": "Petra",
+      "lastname": "Leidman",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1031",
+    "values": {
+      "firstname": "Joe",
+      "lastname": "Kneafsey",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1607",
+    "values": {
+      "firstname": "PSG",
+      "lastname": "Bundle Team",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "885",
+    "values": {
+      "firstname": "Randy",
+      "lastname": "Unger",
+      "role.internalid": [
+        {
+          "value": "1013",
+          "text": "1013"
+        }
+      ],
+      "role.name": "13: Controller"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1563",
+    "values": {
+      "firstname": "Rod",
+      "lastname": "Bravo",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1650",
+    "values": {
+      "firstname": "Roque",
+      "lastname": "Peralta",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1510",
+    "values": {
+      "firstname": "Rosario",
+      "lastname": "Hernandez",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1539",
+    "values": {
+      "firstname": "Ruth",
+      "lastname": "Smith",
+      "role.internalid": [
+        {
+          "value": "1060",
+          "text": "1060"
+        }
+      ],
+      "role.name": "07: Assembly"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1544",
+    "values": {
+      "firstname": "Sam",
+      "lastname": "Duffy",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "18",
+    "values": {
+      "firstname": "Sam",
+      "lastname": "Cruz",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1546",
+    "values": {
+      "firstname": "Sam",
+      "lastname": "Smith",
+      "role.internalid": [
+        {
+          "value": "1014",
+          "text": "1014"
+        }
+      ],
+      "role.name": "04: Purchasing"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1511",
+    "values": {
+      "firstname": "Sarah",
+      "lastname": "Jenson",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "914",
+    "values": {
+      "firstname": "Scott",
+      "lastname": "Beveridge",
+      "role.internalid": [
+        {
+          "value": "1003",
+          "text": "1003"
+        }
+      ],
+      "role.name": "01: Senior Executive"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1425",
+    "values": {
+      "firstname": "Scott",
+      "lastname": "Winborne",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1567",
+    "values": {
+      "firstname": "Solution Devt",
+      "lastname": "Group",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1426",
+    "values": {
+      "firstname": "Steven",
+      "lastname": "Bisset",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1606",
+    "values": {
+      "firstname": "Suite",
+      "lastname": "Demo Team",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1538",
+    "values": {
+      "firstname": "Susan",
+      "lastname": "Gibson",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "917",
+    "values": {
+      "firstname": "Tara",
+      "lastname": "Wilson",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1",
+    "values": {
+      "firstname": "",
+      "lastname": "",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "2",
+    "values": {
+      "firstname": "",
+      "lastname": "",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1644",
+    "values": {
+      "firstname": "Terry",
+      "lastname": "Chan",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "28",
+    "values": {
+      "firstname": "Tom",
+      "lastname": "Taylor",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "180",
+    "values": {
+      "firstname": "Tom",
+      "lastname": "Kess",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "1654",
+    "values": {
+      "firstname": "Walter",
+      "lastname": "Manias",
+      "role.internalid": [
+        {
+          "value": "3",
+          "text": "3"
+        }
+      ],
+      "role.name": "Administrator"
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "918",
+    "values": {
+      "firstname": "Walter",
+      "lastname": "Reagan",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  },
+  {
+    "recordType": "employee",
+    "id": "213",
+    "values": {
+      "firstname": "web",
+      "lastname": "wizard",
+      "role.internalid": [],
+      "role.name": ""
+    }
+  }
+]

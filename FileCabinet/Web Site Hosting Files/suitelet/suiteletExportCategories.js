@@ -1,26 +1,27 @@
 /**
+ * suiteletExportCategories.js
  * @NApiVersion 2.x
  * @NScriptType Suitelet
- * @NModuleScope SameAccount
  */
-define(['N/query', 'N/search', 'N/file'],
+define(['N/search', 'N/file'],
     /**
-     * @param{query} queryfolderName
      * @param{search} search
      * @param{file} file
      */
-    function (query, search, file) {
+    function (search, file) {
 
-        function saveCSVFile(searchResult) {
-             var now = new Date().toISOString();
+        function saveCSVFile(searchResult, folderName, fileName) {
+            var csvFolderId = getFolderId(folderName);
+            var now = new Date().toISOString();
+
             // Create the CSV file
             var csvFile = file.create({
-                name: 'categories-data-eureka-' + now + '.csv',
+                name: fileName + '-' + now + '-bndl.csv',
                 contents:
                     'Category (No Hierarchy),' +
                     'Category,' +
                     'Is Inactive\n',
-                folder: 39,
+                folder: csvFolderId, //Folder ID (FileCabinet)
                 fileType: 'CSV'
             });
 
@@ -39,11 +40,36 @@ define(['N/query', 'N/search', 'N/file'],
                         searchResult[i].getValue({name: 'isinactive', summary: 'GROUP'})
                 });
             }
+
+            var csvFileId = csvFile.save();
+
             log.debug({
                 title: 'saveCSVFile',
-                details: 'CSV file saved success'
+                details: 'CSV file saved success - csvFileId[' + csvFileId + ']'
             });
+
             return csvFile;
+        }
+
+        function getFolderId(folderName) {
+            var searchFolderResult = search.create({
+                type: search.Type.FOLDER,
+                title: 'Search Folder',
+                filters: [
+                    search.createFilter({
+                        name: 'name',
+                        operator: search.Operator.IS,
+                        values: folderName
+                    })
+                ],
+                columns: [search.createColumn({
+                    name: 'internalid'
+                })]
+            }).run();
+
+            searchFolderResult = searchFolderResult.getRange(0, 1000);
+
+            return searchFolderResult[0].getValue('internalid');
         }
 
         /**
@@ -55,25 +81,18 @@ define(['N/query', 'N/search', 'N/file'],
          * @Since 2015.2
          */
         function onRequest(context) {
-            // Search on Categories
-            // https://developers.suitecommerce.com/chapter4673202005
+            // Export Categories
+            var fileName = 'categories-data-eureka';
+            var folderName = 'EurekaLabs';
 
             var parameters = context.request.parameters;
 
             log.debug({
                 title: 'onRequest',
-                details: 'Parameters: ' + JSON.stringify(parameters)
+                details: 'Parameters[' + JSON.stringify(parameters) + ']'
             });
 
-            var onlyActiveFilter;
-
-            if (parameters.onlyActive && parameters.onlyActive === 'T') {
-                onlyActiveFilter = search.createFilter({
-                    name: 'isinactive',
-                    operator: search.Operator.IS,
-                    values: ['F']
-                });
-            }
+            var websiteId = parameters.websiteId ? parameters.websiteId : 1;
 
             var filters = [
                 search.createFilter({
@@ -82,14 +101,17 @@ define(['N/query', 'N/search', 'N/file'],
                     values: ['T']
                 }),
                 search.createFilter({
+                    name: 'website',
+                    operator: search.Operator.IS,
+                    values: [websiteId]
+                }),
+                search.createFilter({
                     name: 'formulanumeric',
                     formula: 'CASE WHEN {category} LIKE \'Related Items for%\' THEN 0 ELSE 1 END',
                     operator: search.Operator.EQUALTO,
                     values: ['1']
                 })
             ];
-
-            if (onlyActiveFilter) filters = filters.concat(onlyActiveFilter)
 
             var searchResult = search.create({
                 type: search.Type.ITEM,
@@ -114,17 +136,20 @@ define(['N/query', 'N/search', 'N/file'],
                 ],
                 filters: filters
             }).run();
+
             searchResult = searchResult.getRange(0, 1000);
+
             log.debug({
                 title: 'onRequest',
                 details: 'Search success: ' + searchResult
             });
-            var csvFile = saveCSVFile(searchResult);
+
+            var csvFile = saveCSVFile(searchResult, folderName, fileName);
+
             log.debug({
                 title: 'onRequest',
                 details: 'CSV file creation success'
             });
-            context.response.writeFile(csvFile)
         }
 
         return {
