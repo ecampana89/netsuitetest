@@ -99,7 +99,7 @@ define(['N/search', 'N/file', './customModule', 'N/runtime', 'N/task'],
                 log.debug("Remaining governance units inicial: " + scriptObj.getRemainingUsage());
 
                 var siteBuilderWebsiteId = parameters.siteBuilderWebsiteId ? parameters.siteBuilderWebsiteId : 1;
-                var folderId = parameters.destinationFolderId ? parameters.destinationFolderId : 5188;
+                var folderId = parameters.destinationFolderId ? parameters.destinationFolderId : 7316;
                 //TODO cambiar a false para subir
                 var suiteCommerceImportData = parameters.suiteCommerceImportData ? parameters.suiteCommerceImportData : true;
                 var cleanImageFolder = parameters.cleanImages ? parameters.cleanImages : false;
@@ -112,34 +112,32 @@ define(['N/search', 'N/file', './customModule', 'N/runtime', 'N/task'],
                         name: 'isonline',
                         operator: search.Operator.IS,
                         values: ['T']
-                    }),
-                    search.createFilter({
+                    })
+                    , search.createFilter({
                         name: 'isinactive',
                         operator: search.Operator.IS,
                         values: ['F']
-                    }),
-                    search.createFilter({
+                    })
+                    , search.createFilter({
                         name: 'imageurl',
                         operator: search.Operator.ISNOTEMPTY
                     })
-                    ,
-                    search.createFilter({
+                    , search.createFilter({
                         name: 'website',
                         operator: search.Operator.IS,
                         values: [siteBuilderWebsiteId]
-                    }),
-                    search.createFilter({
-                        name: 'type',
-                        operator: search.Operator.IS,
-                        values: ['InvtPart']
                     })
+                    // , search.createFilter({
+                    //     name: 'type',
+                    //     operator: search.Operator.IS,
+                    //     values: ['InvtPart']
+                    // })
 
-                    /* ,search.createFilter({
-                       name: 'itemid',
-                       operator: search.Operator.IS,
-                       values: ['CAM00006']
-                   })
-                   */
+                    // ,search.createFilter({
+                    //     name: 'itemid',
+                    //     operator: search.Operator.IS,
+                    //     values: ['SEI00001']
+                    // })
                 ];
 
                 // // search on items

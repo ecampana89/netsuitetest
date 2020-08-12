@@ -56,19 +56,20 @@ define(['N/file', 'N/log', 'N/record', 'N/search', 'N/runtime','./customModule']
                     name: 'website',
                     operator: search.Operator.IS,
                     values: [ siteBuilderWebsiteId ]
-                }),
-                search.createFilter({
-                    name: 'type',
-                    operator: search.Operator.IS,
-                    values: [ 'InvtPart' ]
                 })
+                // ,
+               //  search.createFilter({
+               //      name: 'type',
+               //      operator: search.Operator.IS,
+               //      values: [ 'InvtPart' ]
+               //  })
+               //
+               //  ,search.createFilter({
+               //     name: 'itemid',
+               //     operator: search.Operator.IS,
+               //     values: ['SEI00001']
+               // })
 
-                /* ,search.createFilter({
-                   name: 'itemid',
-                   operator: search.Operator.IS,
-                   values: ['CAM00006']
-               })
-               */
             ];
 
             // // search on items
